@@ -1,4 +1,8 @@
-Library/
-ProjectSettings/AudioManager.asset
-ProjectSettings/
+*.db
+*.log
+Library/metadata/
+Library/PlayerDataCache/
+Library/ScriptAssemblies/
+Library/ShaderCache
 *.spp
+*.max
