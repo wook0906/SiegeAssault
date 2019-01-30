@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siege_Assault", "Assembly-CSharp.csproj", "{AEEA6BE7-DB97-E3B6-8702-5FF7902E5C0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siege_Assault", "Assembly-CSharp-Editor.csproj", "{1F7136AD-8FE6-759C-6141-7FA9F3EA9A74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEEA6BE7-DB97-E3B6-8702-5FF7902E5C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEEA6BE7-DB97-E3B6-8702-5FF7902E5C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEEA6BE7-DB97-E3B6-8702-5FF7902E5C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEEA6BE7-DB97-E3B6-8702-5FF7902E5C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F7136AD-8FE6-759C-6141-7FA9F3EA9A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7136AD-8FE6-759C-6141-7FA9F3EA9A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7136AD-8FE6-759C-6141-7FA9F3EA9A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7136AD-8FE6-759C-6141-7FA9F3EA9A74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
