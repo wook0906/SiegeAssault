@@ -6,11 +6,11 @@
 *.meta
 
 
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
+Library/
+Temp/
+obj/
+Build/
+Builds/
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
