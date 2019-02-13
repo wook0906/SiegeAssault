@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SiegeEnemyGenerator : MonoBehaviour {
-    public GameObject enemyPrefab;
+    public List<GameObject> enemyPrefabs;
     public List<Transform> generatePositions;
     public List<GameObject> ladderSetters;
     public float generateDelay;
@@ -24,7 +24,7 @@ public class SiegeEnemyGenerator : MonoBehaviour {
     void GenerateEnemy()
     {
         randomIdx = Random.Range(0, 3);
-        GameObject enemyInst = Instantiate(enemyPrefab);
+        GameObject enemyInst = Instantiate(enemyPrefabs[Random.Range(0,2)]);
         enemyInst.transform.position = generatePositions[randomIdx].transform.position;
         for (int j = 0; j < ladderSetters.Count; j++)
         {

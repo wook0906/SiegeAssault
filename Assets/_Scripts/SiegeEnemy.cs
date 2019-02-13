@@ -12,6 +12,7 @@ public class SiegeEnemy : MonoBehaviour {
     public float attackDelay;
     public float stunTime;
     public float speed;
+    public Animator enemyAnimator;
 
     [SerializeField]
     EnemyState curState;
@@ -25,6 +26,7 @@ public class SiegeEnemy : MonoBehaviour {
 	void Start () {
         goalPointIdx = Random.Range(0, 3);
         wayPoint = points[goalPointIdx];
+        enemyAnimator = this.GetComponent<Animator>();
 	}
 	public EnemyState GetEnemyState()
     {
@@ -51,6 +53,7 @@ public class SiegeEnemy : MonoBehaviour {
     {
         prevState = curState;
         curState = es;
+        ChangeAnimation();
     }
     void StateUpdate()
     {
@@ -82,6 +85,37 @@ public class SiegeEnemy : MonoBehaviour {
         }
 
     }
+    void ChangeAnimation()
+    {
+       
+        if (enemyAnimator != null)
+        {
+            switch (curState)
+            {
+                case EnemyState.idle:
+                    break;
+                case EnemyState.setLadder:
+                    break;
+                case EnemyState.rideLadder:
+                    //enemyAnimator.CrossFade("rideLadder", 0.5f);
+                    break;
+                case EnemyState.move:
+                    enemyAnimator.CrossFade("run", 0.5f);
+                    break;
+                case EnemyState.dead:
+                    print("Change Animation!");
+                    enemyAnimator.CrossFade("death", 0.5f);
+                    break;
+                case EnemyState.attack:
+                    break;
+                case EnemyState.hitRecover:
+                    //enemyAnimator.CrossFade("hitRecovery", 0.5f);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     public void SetWayPoint(GameObject go)
     {
         wayPoint = go;
@@ -111,8 +145,6 @@ public class SiegeEnemy : MonoBehaviour {
     }
     void Dead()
     {
-        //animation
-        //if(animationEnd){ Destroy(this.gameObject);}
         Invoke("DelayedDestroy", 1.5f);
     }
     /*void SetLadder()

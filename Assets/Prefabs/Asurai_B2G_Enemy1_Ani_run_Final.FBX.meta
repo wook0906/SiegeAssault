@@ -67,7 +67,7 @@ ModelImporter:
     400060: "\xD7\xFE\xD7\xFC"
     2100000: No Name
     4300000: Box005
-    7400000: Take 001
+    7400000: "\uC774\uC81C\uC548\uC500"
     9500000: //RootNode
     13700000: Box005
   externalObjects: {}
@@ -99,7 +99,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: "\uC774\uC81C\uC548\uC500"
       takeName: Take 001
       firstFrame: 0
       lastFrame: 24
