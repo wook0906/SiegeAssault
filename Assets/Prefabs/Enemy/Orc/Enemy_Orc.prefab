@@ -1067,7 +1067,7 @@ MonoBehaviour:
   - {fileID: 0}
   life: 2
   attackDelay: 3
-  stunTime: 0.5
+  stunTime: 0.75
   speed: 1.5
   enemyAnimator: {fileID: 0}
   curState: 0

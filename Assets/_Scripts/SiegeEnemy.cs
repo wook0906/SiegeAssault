@@ -17,8 +17,6 @@ public class SiegeEnemy : MonoBehaviour {
     [SerializeField]
     EnemyState curState;
     EnemyState prevState;
-    bool isStun;
-    bool turn =false;
     float timeStamp;
     GameObject wayPoint;
     int goalPointIdx;
@@ -55,11 +53,13 @@ public class SiegeEnemy : MonoBehaviour {
         curState = es;
         ChangeAnimation();
     }
+    
     void StateUpdate()
     {
         switch (curState)
         {
             case EnemyState.idle:
+                
                 ReturnToPrevState();
                 break;
             case EnemyState.setLadder:
@@ -103,13 +103,13 @@ public class SiegeEnemy : MonoBehaviour {
                     enemyAnimator.CrossFade("run", 0.5f);
                     break;
                 case EnemyState.dead:
-                    print("Change Animation!");
                     enemyAnimator.CrossFade("death", 0.5f);
                     break;
                 case EnemyState.attack:
                     break;
                 case EnemyState.hitRecover:
-                    //enemyAnimator.CrossFade("hitRecovery", 0.5f);
+                    timeStamp = Time.time;
+                    enemyAnimator.CrossFade("stun", 0.5f);
                     break;
                 default:
                     break;
@@ -187,23 +187,20 @@ public class SiegeEnemy : MonoBehaviour {
     }*/
     void HitRecover()
     {
-        isStun = true;
         this.GetComponent<Rigidbody>().useGravity = true;
         if(Time.time - timeStamp > stunTime)
         {
-            isStun = false;
-            ChangeEnemyState(EnemyState.idle);
-            timeStamp = Time.time;
+            ReturnToPrevState();
         }
     }
     void ReturnToPrevState()
     {
-        if (isStun)
+        if (prevState == EnemyState.idle)
         {
-            ChangeEnemyState(prevState);
-            timeStamp = Time.time;
+            ChangeEnemyState(EnemyState.move);
+            return;
         }
-        ChangeEnemyState(EnemyState.move);
+        ChangeEnemyState(prevState);
     }
     private void OnTriggerEnter(Collider other)
     {
